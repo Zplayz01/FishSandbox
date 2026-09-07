@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishSandbox - About Me</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Main content area */
+        .main-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            z-index: 5;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            font-weight: 800;
+            text-align: center;
+            user-select: none;
+            margin-bottom: 24px;
+        }
+
+        /* Navigation bar directly below the heading */
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            z-index: 10;
+            margin-bottom: 50px;
+        }
+
+        /* Identical rectangular buttons with 7px rounded corners */
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            border-radius: 7px;
+            height: 50px;
+            width: 170px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #ffffff;
+            color: #2b2b2b;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Find Me links container */
+        .contact-container {
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: #ffffff;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-card span {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .contact-card .handle {
+            color: #cccccc;
+            font-size: 1rem;
+        }
+
+        /* Cursor particle trail */
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fadeOut 0.8s forwards ease-out;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.2) translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="main-content">
+        <h1>Find Me</h1>
+
+        <nav class="navbar">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="projects.html" class="nav-btn">Projects</a>
+            <a href="findme.html" class="nav-btn">Find Me</a>
+            <a href="https://github.com/Zplayz01/website" class="nav-btn">Github</a>
+        </nav>
+        
+        <div class="about container">
+          <div class="about-me">
+              <h2>About Me</h2>
+              <p>I am known online as Zplayz (my username on most platforms). My Perfered coding language is java script whilst I am currently trying to learn to code HTML. In my freetime I normally try random things on my home laptops and computers or play video games. Some video games I play is Minecraft, Forza Horizon and Gran Turismo. I have custom built my own pc and rooted & installed a custom rom on a samsung tablet. I am eager to learn more about coding and tech and am fine to talk online about tech, coding and video games.</p> 
+          </div>
+          <div class="primary-code-language">
+            <h2>Primary Coding Language</h2>
+            <p>My current coding language which I code in is Java Script, I am planning on trying to learn HTML as I want to further develop my website.</p>
+        </div>
+          <div class="about-my-tech">
+            <h2>Info About the Tech I use</h2>
+            <p>Primary PC:</p>
+            <p>- Linux Bazzite (GNOME)</p>
+            <p>- Nvidia RTX 3050</p>
+            <p>- AMD Ryzen 5 8500G</p>
+            <p>- Silverstone Case</p>
+            <p>- Thermaltake RGB Fans</p>
+            <p>- MSI 750w Powersupply</p>
+            <p>- MSI Motherboard</p>
+            <p>- 32GB DDR5 6000mhz cl32 RAM</p>
+            <p> </p>
+            <p>Phone:</p>
+            <p>Samsung Galaxy S20 (Exynos Chip)</p>
+            <p></p>
+            <p>Peripherals:</p>
+            <p>- [Mouse] Logitech G203 Lightsync</p>
+            <p>- [Keyboard] Logitech G512 Carbon</p>
+            <p>- [Headphones] JBL Quantumn 350</p>
+            <p>- [Monitor] Lenovo Legion 27Q-11</p>
+        </div>
+    </main>
+
+    <script>
+        // Interactive cursor particle trail retained from home page
+        window.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.4) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y + window.scrollY}px`;
+
+            const colors = ['#ff0055', '#00e5ff', '#ffeb3b', '#76ff03', '#d500f9'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.backgroundColor = randomColor;
+            particle.style.boxShadow = `0 0 8px ${randomColor}`;
+
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 800);
+        }
+    </script>
+
+</body>
+</html>
