@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-</head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FishSandbox - About Me</title>
@@ -14,7 +14,7 @@
         }
 
         html, body {
-            height: 100vh;
+            min-height: 100vh;
             width: 100vw;
             background-color: #2b2b2b;
             color: #ffffff;
@@ -55,6 +55,8 @@
             gap: 20px;
             z-index: 10;
             margin-bottom: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         /* Identical rectangular buttons with 7px rounded corners */
@@ -80,42 +82,66 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
-        /* Find Me links container */
-        .contact-container {
+        /* Main outer box container for all content */
+        .about-container {
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
         }
 
-        .contact-card {
+        /* Individual section box inside the main container */
+        .section-box {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            padding: 20px 24px;
+            padding: 24px;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-decoration: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-box h2 {
+            font-size: 1.5rem;
             color: #ffffff;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+            margin-bottom: 6px;
         }
 
-        .contact-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-card span {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .contact-card .handle {
+        .section-box p {
             color: #cccccc;
+            line-height: 1.6;
             font-size: 1rem;
+        }
+
+        /* Subtitles for specs list (Primary PC, Phone, Peripherals) */
+        .tech-subtitle {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+
+        /* Spec list item styling */
+        .tech-list {
+            list-style-type: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .tech-list li {
+            color: #cccccc;
+            font-size: 0.98rem;
+            line-height: 1.4;
         }
 
         /* Cursor particle trail */
@@ -143,41 +169,55 @@
             <a href="index.html" class="nav-btn">Home</a>
             <a href="projects.html" class="nav-btn">Projects</a>
             <a href="findme.html" class="nav-btn">Find Me</a>
-            <a href="https://github.com/Zplayz01/website" class="nav-btn">Github</a>
+            <a href="https://github.com/Zplayz01/website" target="_blank" class="nav-btn">Github</a>
         </nav>
         
-        <a href="" target="_blank" class="project-card">
-            <div class="about container">
-              <div class="about-me">
-              <h2>About Me</h2>
-              <p>I am known online as Zplayz (my username on most platforms). My Perfered coding language is java script whilst I am currently trying to learn to code HTML. In my freetime I normally try random things on my home laptops and computers or play video games. Some video games I play is Minecraft, Forza Horizon and Gran Turismo. I have custom built my own pc and rooted & installed a custom rom on a samsung tablet. I am eager to learn more about coding and tech and am fine to talk online about tech, coding and video games.</p> 
-              </div>
-              <div class="primary-code-language">
-            <h2>Primary Coding Language</h2>
-            <p>My current coding language which I code in is Java Script, I am planning on trying to learn HTML as I want to further develop my website.</p>
+        <!-- Big Container Box -->
+        <div class="about-container">
+
+            <!-- Section 1: About Me -->
+            <div class="section-box">
+                <h2>About Me</h2>
+                <p>I am known online as Zplayz (my username on most platforms). My preferred coding language is JavaScript whilst I am currently trying to learn to code HTML. In my freetime I normally try random things on my home laptops and computers or play video games. Some video games I play are Minecraft, Forza Horizon, and Gran Turismo. I have custom built my own PC and rooted & installed a custom ROM on a Samsung tablet. I am eager to learn more about coding and tech and am fine to talk online about tech, coding and video games.</p>
             </div>
-              <div class="about-my-tech">
-            <h2>Info About the Tech I use</h2>
-            <p>Primary PC:</p>
-            <p>- Linux Bazzite (GNOME)</p>
-            <p>- Nvidia RTX 3050</p>
-            <p>- AMD Ryzen 5 8500G</p>
-            <p>- Silverstone Case</p>
-            <p>- Thermaltake RGB Fans</p>
-            <p>- MSI 750w Powersupply</p>
-            <p>- MSI Motherboard</p>
-            <p>- 32GB DDR5 6000mhz cl32 RAM</p>
-            <p> </p>
-            <p>Phone:</p>
-            <p>Samsung Galaxy S20 (Exynos Chip)</p>
-            <p></p>
-            <p>Peripherals:</p>
-            <p>- [Mouse] Logitech G203 Lightsync</p>
-            <p>- [Keyboard] Logitech G512 Carbon</p>
-            <p>- [Headphones] JBL Quantumn 350</p>
-            <p>- [Monitor] Lenovo Legion 27Q-11</p>
+
+            <!-- Section 2: Primary Code Language -->
+            <div class="section-box">
+                <h2>Primary Coding Language</h2>
+                <p>My current coding language which I code in is JavaScript. I am planning on trying to learn HTML as I want to further develop my website.</p>
             </div>
-        </a>
+
+            <!-- Section 3: Tech Info -->
+            <div class="section-box">
+                <h2>Info About the Tech I use</h2>
+
+                <p class="tech-subtitle">Primary PC:</p>
+                <ul class="tech-list">
+                    <li>- Linux Bazzite (GNOME)</li>
+                    <li>- Nvidia RTX 3050</li>
+                    <li>- AMD Ryzen 5 8500G</li>
+                    <li>- Silverstone Case</li>
+                    <li>- Thermaltake RGB Fans</li>
+                    <li>- MSI 750w Powersupply</li>
+                    <li>- MSI Motherboard</li>
+                    <li>- 32GB DDR5 6000mhz cl32 RAM</li>
+                </ul>
+
+                <p class="tech-subtitle">Phone:</p>
+                <ul class="tech-list">
+                    <li>- Samsung Galaxy S20 (Exynos Chip)</li>
+                </ul>
+
+                <p class="tech-subtitle">Peripherals:</p>
+                <ul class="tech-list">
+                    <li>- <strong>[Mouse]:</strong> Logitech G203 Lightsync</li>
+                    <li>- <strong>[Keyboard]:</strong> Logitech G512 Carbon</li>
+                    <li>- <strong>[Headphones]:</strong> JBL Quantum 350</li>
+                    <li>- <strong>[Monitor]:</strong> Lenovo Legion 27Q-11</li>
+                </ul>
+            </div>
+
+        </div>
     </main>
 
     <script>
