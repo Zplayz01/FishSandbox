@@ -7,157 +7,149 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+   <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
 
-        html, body {
-            height: 100vh;
-            width: 100vw;
-            background-color: #2b2b2b;
-            color: #ffffff;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
+    html, body {
+        height: 100vh;
+        width: 100vw;
+        background-color: #2b2b2b;
+        color: #ffffff;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        /* Main content area */
-        .main-content {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            z-index: 5;
-        }
+    .main-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        z-index: 5;
+    }
 
-        h1 {
-            font-size: 2.2rem;
-            color: #ffffff;
-            font-weight: 800;
-            text-align: center;
-            user-select: none;
-            margin-bottom: 24px;
-        }
+    h1 {
+        font-size: 2.2rem;
+        color: #ffffff;
+        font-weight: 800;
+        text-align: center;
+        user-select: none;
+        margin-bottom: 24px;
+    }
 
-        /* Navigation bar directly below the heading */
-        .navbar {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            z-index: 10;
-            margin-bottom: 50px;
-        }
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        z-index: 10;
+        margin-bottom: 50px;
+    }
 
-        /* Identical rectangular buttons with 7px rounded corners */
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 600;
-            border: 2px solid #ffffff;
-            background-color: transparent;
-            border-radius: 7px;
-            height: 50px;
-            width: 170px;
-            transition: all 0.2s ease;
-        }
+    .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 600;
+        border: 2px solid #ffffff;
+        background-color: transparent;
+        border-radius: 7px;
+        height: 50px;
+        width: 170px;
+        transition: all 0.2s ease;
+    }
 
-        .nav-btn:hover {
-            background-color: #ffffff;
-            color: #2b2b2b;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-        }
+    .nav-btn:hover {
+        background-color: #ffffff;
+        color: #2b2b2b;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
 
-        /* Find Me links container */
-        .contact-container {
-            width: 90%;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    .contact-container {
+        width: 90%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
-        .contact-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-decoration: none;
-            color: #ffffff;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-        }
+    .contact-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 20px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #ffffff;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
 
-        .contact-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.1);
-        }
+    .contact-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.1);
+    }
 
-        /* Left group layout to align icon next to label */
-        .contact-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+    .contact-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-        /* Inline SVG Icon styling */
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            fill: #ffffff;
-            transition: fill 0.2s ease;
-        }
+    .contact-icon {
+        width: 24px;
+        height: 24px;
+        fill: #ffffff;
+        transition: fill 0.2s ease;
+    }
 
-        .contact-card span {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
+    .contact-card span {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
 
-        .contact-card .handle {
-            color: #cccccc;
-            font-size: 1rem;
-        }
+    .contact-card .handle {
+        color: #cccccc;
+        font-size: 1rem;
+    }
 
-        /* Custom Hover Icon Colors */
-        .contact-card:hover:nth-child(1) .contact-icon { fill: #a2a2a2; } /* GitHub */
-        .contact-card:hover:nth-child(2) .contact-icon { fill: #f5a623; } /* p5.js */
-        .contact-card:hover:nth-child(3) .contact-icon { fill: #ff9f43; } /* Scratch */
-        .contact-card:hover:nth-child(4) .contact-icon { fill: #ff0000; } /* YouTube */
-        .contact-card:hover:nth-child(5) .contact-icon { fill: #ff4500; } /* Reddit */
-        .contact-card:hover:nth-child(6) .contact-icon { fill: #00bcd4; } /* Email */
+    .contact-card:hover:nth-child(1) .contact-icon { fill: #a2a2a2; }
+    .contact-card:hover:nth-child(2) .contact-icon { fill: #f5a623; }
+    .contact-card:hover:nth-child(3) .contact-icon { fill: #ff9f43; }
+    .contact-card:hover:nth-child(4) .contact-icon { fill: #ff0000; }
+    .contact-card:hover:nth-child(5) .contact-icon { fill: #ff4500; }
+    .contact-card:hover:nth-child(6) .contact-icon { fill: #00bcd4; }
 
-        /* Cursor particle trail */
-        .particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: fadeOut 0.8s forwards ease-out;
-        }
+    .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: fadeOut 0.8s forwards ease-out;
+    }
 
-        @keyframes fadeOut {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0.2) translateY(-20px); }
-        }
-    </style>
+    @keyframes fadeOut {
+        0% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(0.2) translateY(-20px); }
+    }
+</style>
 </head>
 <body>
 
@@ -171,60 +163,63 @@
             <a href="https://github.com" class="nav-btn">Github</a>
         </nav>
         
-        <div class="contact-container">
-            <!-- GitHub -->
-            <a href="https://github.com" target="_blank" class="contact-card">
-                <div class="contact-left">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    <span>GitHub</span>
-                </div>
-                <span class="handle">@Zplayz01</span>
-            </a>
+<div class="contact-container">
+    <!-- GitHub -->
+    <a href="https://github.com" target="_blank" class="contact-card">
+        <div class="contact-left">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
+        </div>
+        <span class="handle">@Zplayz01</span>
+    </a>
 
-            <!-- p5.js -->
-            <a href="https://p5js.org" target="_blank" class="contact-card">
-                <div class="contact-left">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-14.25 1.125h2.25v1.5h-2.25v2.25h-1.5v-2.25h-2.25v-1.5h2.25v-2.25h1.5v2.25zm8.25 2.25h-3.75v-1.5h3.75v1.5zm0-3h-3.75v-1.5h3.75v1.5z"/></svg>
+    <!-- p5.js -->
+    <a href="https://p5js.org" target="_blank" class="contact-card">
+        <div class="contact-left">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-14.25 1.125h2.25v1.5h-2.25v2.25h-1.5v-2.25h-2.25v-1.5h2.25v-2.25h1.5v2.25zm8.25 2.25h-3.75v-1.5h3.75v1.5zm0-3h-3.75v-1.5h3.75v1.5z"/></svg>
                     <span>p5.js</span>
-                </div>
-                <span class="handle">zaandretzke</span>
-            </a>
+        </div>
+        <span class="handle">zaandretzke</span>
+    </a>
 
-            <!-- Scratch -->
-            <a href="https://mit.edu" target="_blank" class="contact-card">
-                <div class="contact-left">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M11.5 5.5a3.5 3.5 0 0 1 7 0v2.75A2.75 2.75 0 0 1 21.25 11v4.5A2.75 2.75 0 0 1 18.5 18.25h-2.75a3.5 3.5 0 0 1-7 0H6a2.75 2.75 0 0 1-2.75-2.75v-4.5A2.75 2.75 0 0 1 6 8.25h2.75V5.5zm1.5 0v2.75h4V5.5a1.5 1.5 0 1 0-4 0zm-2.75 4.25H6a1.25 1.25 0 0 0-1.25 1.25v4.5C4.75 16.19 5.31 16.75 6 16.75h4.25v-7zm1.5 7h4v-7h-4v7z"/></svg>
-                    <span>Scratch</span>
-                </div>
-                <span class="handle">the_cool_Zac</span>
-            </a>
+    <!-- Scratch -->
+    <a href="https://mit.edu" target="_blank" class="contact-card">
+        <div class="contact-left">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M11.5 5.5a3.5 3.5 0 0 1 7 0v2.75A2.75 2.75 0 0 1 21.25 11v4.5A2.75 2.75 0 0 1 18.5 18.25h-2.75a3.5 3.5 0 0 1-7 0H6a2.75 2.75 0 0 1-2.75-2.75v-4.5A2.75 2.75 0 0 1 6 8.25h2.75V5.5zm1.5 0v2.75h4V5.5a1.5 1.5 0 1 0-4 0zm-2.75 4.25H6a1.25 1.25 0 0 0-1.25 1.25v4.5C4.75 16.19 5.31 16.75 6 16.75h4.25v-7zm1.5 7h4v-7h-4v7z"/></svg>
+            <span>Scratch</span>
+        </div>
+        <span class="handle">the_cool_Zac</span>
+    </a>
 
-            <!-- YouTube Channel -->
-            <a href="https://youtube.com" target="_blank" class="contact-card">
-                <div class="contact-left">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    <span>YouTube Channel</span>
-                </div>
-                <span class="handle">@ZplayzYT</span>
-            </a>
+    <!-- YouTube Channel -->
+    <a href="https://youtube.com" target="_blank" class="contact-card">
+        <div class="contact-left">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube Channel</span>
+        </div>
+        <span class="handle">@ZplayzYT</span>
+    </a>
 
-            <!-- Reddit -->
-            <a href="https://reddit.com" target="_blank" class="contact-card">
-                <div class="contact-left">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.64-6.29-1.72l1.35-4.24 3.71.79c.04.97.84 1.74 1.82 1.74 1.02 0 1.84-.83 1.84-1.84s-.83-1.84-1.84-1.84c-.84 0-1.55.57-1.77 1.34l-4.13-.88c-.17-.04-.35.05-.41.22L10.9 6.27c-2.52.05-4.82.7-6.49 1.73A3.23 3.23 0 0 0 2 6.5c-1.65 0-3 1.35-3 3 0 1.06.55 2 1.39 2.53-.04.24-.06.49-.06.74 0 3.72 4.41 6.74 9.83 6.74s9.83-3.03 9.83-6.74c0-.25-.02-.49-.05-.73A3.21 3.21 0 0 0 24 11.5zm-19.14 1.28c0-.85.69-1.54 1.54-1.54s1.54.69 1.54 1.54-.69 1.54-1.54 1.54-1.54-.69-1.54-1.54zm11.31 3.63c-1.12 1.12-3.23 1.21-4.17 1.21-.95 0-3.05-.09-4.17-1.21-.15-.15-.15-.4 0-.55.15-.15.4-.15.55 0 .84.84 2.51.96 3.62.96 1.11 0 2.77-.12 3.62-.96.15-.15.4-.15.55 0 .15.15.15.4 0 .55zm-1.03-2.09c-.85 0-1.54-.69-1.54-1.54s.69-1.54 1.54-1.54 1.54.69 1.54 1.54-.69 1.54-1.54 1.54z"/></svg>
-                    <span>Reddit</span>
-                </div>
-                <span class="handle">@Far-Willingness9576</span>
-            </a>
+    <!-- Reddit -->
+    <a href="https://reddit.com" target="_blank" class="contact-card">
+        <div class="contact-left">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.85-1.64-6.29-1.72l1.35-4.24 3.71.79c.04.97.84 1.74 1.82 1.74 1.02 0 1.84-.83 1.84-1.84s-.83-1.84-1.84-1.84c-.84 0-1.55.57-1.77 1.34l-4.13-.88c-.17-.04-.35.05-.41.22L10.9 6.27c-2.52.05-4.82.7-6.49 1.73A3.23 3.23 0 0 0 2 6.5c-1.65 0-3 1.35-3 3 0 1.06.55 2 1.39 2.53-.04.24-.06.49-.06.74 0 3.72 4.41 6.74 9.83 6.74s9.83-3.03 9.83-6.74c0-.25-.02-.49-.05-.73A3.21 3.21 0 0 0 24 11.5zm-19.14 1.28c0-.85.69-1.54 1.54-1.54s1.54.69 1.54 1.54-.69 1.54-1.54 1.54-1.54-.69-1.54-1.54zm11.31 3.63c-1.12 1.12-3.23 1.21-4.17 1.21-.95 0-3.05-.09-4.17-1.21-.15-.15-.15-.4 0-.55.15-.15.4-.15.55 0 .84.84 2.51.96 3.62.96 1.11 0 2.77-.12 3.62-.96.15-.15.4-.15.55 0 .15.15.15.4 0 .55zm-1.03-2.09c-.85 0-1.54-.69-1.54-1.54s.69-1.54 1.54-1.54 1.54.69 1.54 1.54-.69 1.54-1.54 1.54z"/></svg>
+            <span>Reddit</span>
+        </div>
+        <span class="handle">@Far-Willingness9576</span>
+    </a>
 
-            <!-- Email -->
-            <a href="mailto:zacandretzke03@gmail.com" class="contact-card">
-                <div class="contact-left">
-                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
-                    <span>Email</span>
-                </div>
-    <script>
-        // Interactive cursor particle trail retained from home page
+    <!-- Email -->
+    <a href="mailto:zacandretzke03@gmail.com" class="contact-card">
+        <div class="contact-left">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+            <span>Email</span>
+        </div>
+        <span class="handle">zacandretzke03@gmail.com</span>
+    </a>
+</div>
+<script>        
+    // Interactive cursor particle trail retained from home page
         window.addEventListener('mousemove', (e) => {
             if (Math.random() > 0.4) {
                 createParticle(e.clientX, e.clientY);
