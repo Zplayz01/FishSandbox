@@ -4,20 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>404 - FishSandbox</title>
+    <title>404 — FishSandbox</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico">
+
+    <style>
+        :root {
+            --background: #0b0c0f;
+            --surface: #111318;
+            --border: #252830;
+            --text: #e8e9eb;
+            --muted: #858994;
+            --accent: #8ab4f8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--background);
+            color: var(--text);
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            width: min(680px, calc(100% - 40px));
+        }
+
+        .error {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+            color: var(--muted);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            letter-spacing: 0.02em;
+        }
+
+        .error::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #e06c75;
+        }
+
+        .card {
+            padding: 42px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        h1 {
+            margin: 0 0 14px;
+            font-size: clamp(42px, 8vw, 68px);
+            line-height: 1;
+            letter-spacing: -0.045em;
+            font-weight: 650;
+        }
+
+        .description {
+            max-width: 500px;
+            margin: 0 0 32px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0 17px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition:
+                background 140ms ease,
+                border-color 140ms ease,
+                transform 140ms ease;
+        }
+
+        .button.primary {
+            background: var(--text);
+            color: #0b0c0f;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        .button.primary:hover {
+            background: #ffffff;
+        }
+
+        .button.secondary:hover {
+            border-color: #3a3e48;
+            background: #17191e;
+        }
+
+        .path {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: #555963;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 520px) {
+            .card {
+                padding: 30px 24px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .button {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <main class="page">
+        <div class="error">
+            ERROR 404
+        </div>
 
-    <h1>404</h1>
+        <section class="card">
+            <h1>Page not found.</h1>
 
-    <p>Umm, you shouldn't be here?</p>
-    <p>Maybe try going home?</p>
+            <p class="description">
+                The page you're looking for doesn't exist, has moved,
+                or the URL was entered incorrectly.
+            </p>
 
-    <a href="index.html">Go back home</a>
+            <div class="actions">
+                <a class="button primary" href="/">
+                    Back to home
+                </a>
 
+                <a class="button secondary" href="/projects.html">
+                    View projects
+                </a>
+            </div>
+
+            <div class="path" id="path"></div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("path").textContent =
+            window.location.pathname;
+    </script>
 </body>
 </html>
